@@ -1,6 +1,3 @@
-
-
-
 .charsheet * {
   box-sizing: border-box;
   font-family: sans-serif; }
@@ -98,6 +95,46 @@
   vertical-align: top;
   white-space: pre-line; }
 
+.pc .tabs .tab-button {
+    display: inline-block;
+    width: 20%;
+    padding: .5em .5em .25em .85em;
+    background-color: gray;
+    border-radius: 1em 1em 0 0;
+    font-size: 1.5em;
+    border: 1px solid black;
+    margin-right: -4px;
+}
+
+.pc .tabs .tab-button.active {
+    background-color: white;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.pc .tab-pane {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 300px;
+    font-size: 1.2em;
+}
+
+.pc .tab-pane.active {
+    display: block;
+    width: 100%;
+}
+
+.pc-col-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.pc-general-data {
+  margin-left: 0.5%;
+}
+
 .charsheet .grid {
   display: inline-grid;
   grid-column-gap: 1%;
@@ -126,8 +163,8 @@
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.charsheet .pc div.skill-box input[name='attr_specialization'][value=' '] ~ div.buttons button[name*='specialization'],.charsheet .pc div.skill-box input[name='attr_specialization'][value=''] ~ div.buttons button[name*='specialization'],.charsheet .pc div.magic input.magic-toggle[value='rituals'] ~ .headers h2:nth-of-type(1n+2),.charsheet .npc,.charsheet .pc,.charsheet .options_toggle:not([value='arms']) ~ .arms,.charsheet .options_toggle:not([value='augs']) ~ .augs,.charsheet .options_toggle:not([value='core']) ~ .core,.charsheet .options_toggle:not([value='gear']) ~ .gear,.charsheet .options_toggle:not([value='options']) ~ .options,.charsheet .options_toggle:not([value='social']) ~ .social,.charsheet .options_toggle:not([value='magic']) ~ .magic,.charsheet .options_toggle:not([value='matrix']) ~ .matrix,.charsheet .options_toggle:not([value='vehicle']) ~ .vehicle,.charsheet .skills-active,.charsheet .skills-know,.charsheet .skills-lang,.charsheet .magic-spells,.charsheet .magic-preps,.charsheet .magic-rituals,.charsheet .quality,.charsheet .martial,.charsheet .cyberdeck,.charsheet .persona,.charsheet .settings,.charsheet input.settings-toggle:checked ~ div.display,.charsheet input.settings-toggle:checked ~ .attribute .col .attribute-row .col .row-long div.display,.charsheet input.settings-toggle:checked ~ .attribute .limits-row .limit .col div.display,.charsheet input.settings-toggle ~ .attr-lim div.settings,.charsheet input.settings-toggle:checked ~ .attr-lim div.display,.charsheet input.settings-toggle[value='settings'] ~ div.display,.charsheet input.settings-toggle[value='display'] ~ div.settings,.charsheet input.settings-toggle[value='display'] ~ div.settings-grid,.charsheet input.settings-toggle[value='display'] ~ .settings,.charsheet .hide-magic,.charsheet .hide-resonance,.charsheet div.weapon-range,.charsheet div.weapon-melee,.charsheet .grunt,.charsheet .host,.charsheet .sprite,.charsheet .vehicle,.charsheet input[name='attr_sheet_type'][value='host'] ~ .npc .column:nth-of-type(2),.charsheet input[name='attr_sheet_type'][value='sprite'] ~ .npc .column:nth-of-type(1n+2),.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .hide-magic,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .hide-resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .grunt.hide-magic,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .grunt.hide-resonance,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.npc .hide-magic,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.npc .grunt.hide-magic,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.npc .hide-resonance,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.npc .grunt.hide-resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.magic,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.magic,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.resonance,.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body input[type='hidden'][value=''] + div.textrow,.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body input[type='hidden'][value=''] + div.rows.grunt,.charsheet input[name='attr_specialization'][value=''] ~ button[name*='specialization'],.charsheet input[name='attr_specialization'][value=' '] ~ button[name*='specialization'],.charsheet input[name='attr_specialization'][value=''] ~ div.row-long div.buttons button[name*='specialization'],.charsheet input[name='attr_specialization'][value=' '] ~ div.row-long div.buttons button[name*='specialization'],.charsheet input[name='attr_weapon_range'][value='range'] ~ div.settings h2[data-i18n='reach'],.charsheet input[name='attr_weapon_range'][value='range'] ~ div.settings label[data-i18n-title='reach'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='modes'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='recoil'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='ammo'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='modes'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='recoil'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='ammo'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings span,.charsheet input[name='attr_category']:not([value='Combat']) ~ h2[data-i18n='combat'],.charsheet input[name='attr_category']:not([value='Combat']) ~ h2[data-i18n='dam'],.charsheet input[name='attr_category']:not([value='Combat']) ~ select[name='attr_combat_type'],.charsheet input[name='attr_category']:not([value='Combat']) ~ label[data-i18n-title='dam'],.charsheet input[name='attr_flag_matrix']:not([value='matrix']) ~ div.matrix,.charsheet .display-none {
-  display: none; }
+/*.charsheet .pc div.skill-box input[name='attr_specialization'][value=' '] ~ div.buttons button[name*='specialization'],.charsheet .pc div.skill-box input[name='attr_specialization'][value=''] ~ div.buttons button[name*='specialization'],.charsheet .pc div.magic input.magic-toggle[value='rituals'] ~ .headers h2:nth-of-type(1n+2),.charsheet .npc,.charsheet .pc,.charsheet .options_toggle:not([value='arms']) ~ .arms,.charsheet .options_toggle:not([value='augs']) ~ .augs,.charsheet .options_toggle:not([value='core']) ~ .core,.charsheet .options_toggle:not([value='gear']) ~ .gear,.charsheet .options_toggle:not([value='options']) ~ .options,.charsheet .options_toggle:not([value='social']) ~ .social,.charsheet .options_toggle:not([value='magic']) ~ .magic,.charsheet .options_toggle:not([value='matrix']) ~ .matrix,.charsheet .options_toggle:not([value='vehicle']) ~ .vehicle,.charsheet .skills-active,.charsheet .skills-know,.charsheet .skills-lang,.charsheet .magic-spells,.charsheet .magic-preps,.charsheet .magic-rituals,.charsheet .quality,.charsheet .martial,.charsheet .cyberdeck,.charsheet .persona,.charsheet .settings,.charsheet input.settings-toggle:checked ~ div.display,.charsheet input.settings-toggle:checked ~ .attribute .col .attribute-row .col .row-long div.display,.charsheet input.settings-toggle:checked ~ .attribute .limits-row .limit .col div.display,.charsheet input.settings-toggle ~ .attr-lim div.settings,.charsheet input.settings-toggle:checked ~ .attr-lim div.display,.charsheet input.settings-toggle[value='settings'] ~ div.display,.charsheet input.settings-toggle[value='display'] ~ div.settings,.charsheet input.settings-toggle[value='display'] ~ div.settings-grid,.charsheet input.settings-toggle[value='display'] ~ .settings,.charsheet .hide-magic,.charsheet .hide-resonance,.charsheet div.weapon-range,.charsheet div.weapon-melee,.charsheet .grunt,.charsheet .host,.charsheet .sprite,.charsheet .vehicle,.charsheet input[name='attr_sheet_type'][value='host'] ~ .npc .column:nth-of-type(2),.charsheet input[name='attr_sheet_type'][value='sprite'] ~ .npc .column:nth-of-type(1n+2),.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .hide-magic,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .hide-resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .grunt.hide-magic,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.npc .grunt.hide-resonance,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.npc .hide-magic,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.npc .grunt.hide-magic,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.npc .hide-resonance,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.npc .grunt.hide-resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.resonance,.charsheet input[name='attr_flag_special'][value='mundane'] ~ div.magic,.charsheet input[name='attr_flag_special'][value='resonance'] ~ div.magic,.charsheet input[name='attr_flag_special'][value='magic'] ~ div.resonance,.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body input[type='hidden'][value=''] + div.textrow,.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body input[type='hidden'][value=''] + div.rows.grunt,.charsheet input[name='attr_specialization'][value=''] ~ button[name*='specialization'],.charsheet input[name='attr_specialization'][value=' '] ~ button[name*='specialization'],.charsheet input[name='attr_specialization'][value=''] ~ div.row-long div.buttons button[name*='specialization'],.charsheet input[name='attr_specialization'][value=' '] ~ div.row-long div.buttons button[name*='specialization'],.charsheet input[name='attr_weapon_range'][value='range'] ~ div.settings h2[data-i18n='reach'],.charsheet input[name='attr_weapon_range'][value='range'] ~ div.settings label[data-i18n-title='reach'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='modes'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='recoil'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings h2[data-i18n='ammo'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='modes'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='recoil'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings label[data-i18n-title='ammo'],.charsheet input[name='attr_weapon_range'][value='melee'] ~ div.settings span,.charsheet input[name='attr_category']:not([value='Combat']) ~ h2[data-i18n='combat'],.charsheet input[name='attr_category']:not([value='Combat']) ~ h2[data-i18n='dam'],.charsheet input[name='attr_category']:not([value='Combat']) ~ select[name='attr_combat_type'],.charsheet input[name='attr_category']:not([value='Combat']) ~ label[data-i18n-title='dam'],.charsheet input[name='attr_flag_matrix']:not([value='matrix']) ~ div.matrix,.charsheet .display-none {
+  display: none; }*/
 
 .charsheet .d-block {
   display: block; }
@@ -472,8 +509,8 @@
     top: 100%;
     width: 0;
     border-top: 5.77px solid #610b0d; }
-  .charsheet div.matrix .hex-hider[value='1'] ~ input[type='checkbox']:nth-child(1n+5),.charsheet div.matrix .hex-hider[value='1'] ~ input[type='checkbox']:nth-child(1n+5) + span,.charsheet div.matrix .hex-hider[value='2'] ~ input[type='checkbox']:nth-child(1n+7),.charsheet div.matrix .hex-hider[value='2'] ~ input[type='checkbox']:nth-child(1n+7) + span,.charsheet div.matrix .hex-hider[value='3'] ~ input[type='checkbox']:nth-child(1n+9),.charsheet div.matrix .hex-hider[value='3'] ~ input[type='checkbox']:nth-child(1n+9) + span,.charsheet div.matrix .hex-hider[value='4'] ~ input[type='checkbox']:nth-child(1n+11),.charsheet div.matrix .hex-hider[value='4'] ~ input[type='checkbox']:nth-child(1n+11) + span,.charsheet div.matrix .hex-hider[value='5'] ~ input[type='checkbox']:nth-child(1n+13),.charsheet div.matrix .hex-hider[value='5'] ~ input[type='checkbox']:nth-child(1n+13) + span,.charsheet div.matrix .hex-hider[value='6'] ~ input[type='checkbox']:nth-child(1n+15),.charsheet div.matrix .hex-hider[value='6'] ~ input[type='checkbox']:nth-child(1n+15) + span,.charsheet div.matrix .hex-hider[value='7'] ~ input[type='checkbox']:nth-child(1n+17),.charsheet div.matrix .hex-hider[value='7'] ~ input[type='checkbox']:nth-child(1n+17) + span {
-    display: none; }
+/*  .charsheet div.matrix .hex-hider[value='1'] ~ input[type='checkbox']:nth-child(1n+5),.charsheet div.matrix .hex-hider[value='1'] ~ input[type='checkbox']:nth-child(1n+5) + span,.charsheet div.matrix .hex-hider[value='2'] ~ input[type='checkbox']:nth-child(1n+7),.charsheet div.matrix .hex-hider[value='2'] ~ input[type='checkbox']:nth-child(1n+7) + span,.charsheet div.matrix .hex-hider[value='3'] ~ input[type='checkbox']:nth-child(1n+9),.charsheet div.matrix .hex-hider[value='3'] ~ input[type='checkbox']:nth-child(1n+9) + span,.charsheet div.matrix .hex-hider[value='4'] ~ input[type='checkbox']:nth-child(1n+11),.charsheet div.matrix .hex-hider[value='4'] ~ input[type='checkbox']:nth-child(1n+11) + span,.charsheet div.matrix .hex-hider[value='5'] ~ input[type='checkbox']:nth-child(1n+13),.charsheet div.matrix .hex-hider[value='5'] ~ input[type='checkbox']:nth-child(1n+13) + span,.charsheet div.matrix .hex-hider[value='6'] ~ input[type='checkbox']:nth-child(1n+15),.charsheet div.matrix .hex-hider[value='6'] ~ input[type='checkbox']:nth-child(1n+15) + span,.charsheet div.matrix .hex-hider[value='7'] ~ input[type='checkbox']:nth-child(1n+17),.charsheet div.matrix .hex-hider[value='7'] ~ input[type='checkbox']:nth-child(1n+17) + span {
+    display: none; }*/
   .charsheet div.matrix .con-hex input[type='radio']:checked ~ .hexagon {
     background-color: #9a9a9a; }
   .charsheet div.matrix .con-hex input[type='radio']:checked ~ .hexagon:before {
@@ -569,8 +606,8 @@
   transform: scale(1.1); }
 
 
-.charsheet .hex-hider[value='8'] ~ input[type='radio']:nth-child(1n+19),.charsheet .hex-hider[value='9'] ~ input[type='radio']:nth-child(1n+21),.charsheet .hex-hider[value='10'] ~ input[type='radio']:nth-child(1n+24),.charsheet .hex-hider[value='11'] ~ input[type='radio']:nth-child(1n+26),.charsheet .hex-hider[value='12'] ~ input[type='radio']:nth-child(1n+28),.charsheet .hex-hider[value='13'] ~ input[type='radio']:nth-child(1n+32),.charsheet .hex-hider[value='14'] ~ input[type='radio']:nth-child(1n+34),.charsheet .hex-hider[value='15'] ~ input[type='radio']:nth-child(1n+36),.charsheet .hex-hider[value='16'] ~ input[type='radio']:nth-child(1n+38),.charsheet .hex-hider[value='17'] ~ input[type='radio']:nth-child(1n+40),.charsheet .hex-hider[value='18'] ~ input[type='radio']:nth-child(1n+42),.charsheet .hex-hider[value='8'] ~ div:nth-child(1n+19),.charsheet .hex-hider[value='9'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='10'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='11'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='12'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='13'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='14'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='15'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='16'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='17'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='18'] ~ div:nth-child(1n+48) {
-  display: none; }
+/*.charsheet .hex-hider[value='8'] ~ input[type='radio']:nth-child(1n+19),.charsheet .hex-hider[value='9'] ~ input[type='radio']:nth-child(1n+21),.charsheet .hex-hider[value='10'] ~ input[type='radio']:nth-child(1n+24),.charsheet .hex-hider[value='11'] ~ input[type='radio']:nth-child(1n+26),.charsheet .hex-hider[value='12'] ~ input[type='radio']:nth-child(1n+28),.charsheet .hex-hider[value='13'] ~ input[type='radio']:nth-child(1n+32),.charsheet .hex-hider[value='14'] ~ input[type='radio']:nth-child(1n+34),.charsheet .hex-hider[value='15'] ~ input[type='radio']:nth-child(1n+36),.charsheet .hex-hider[value='16'] ~ input[type='radio']:nth-child(1n+38),.charsheet .hex-hider[value='17'] ~ input[type='radio']:nth-child(1n+40),.charsheet .hex-hider[value='18'] ~ input[type='radio']:nth-child(1n+42),.charsheet .hex-hider[value='8'] ~ div:nth-child(1n+19),.charsheet .hex-hider[value='9'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='10'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='11'] ~ div:nth-child(1n+24),.charsheet .hex-hider[value='12'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='13'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='14'] ~ div:nth-child(1n+30),.charsheet .hex-hider[value='15'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='16'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='17'] ~ div:nth-child(1n+38),.charsheet .hex-hider[value='18'] ~ div:nth-child(1n+48) {
+  display: none; }*/
 
 .charsheet .hex-hider[value='8'] ~ input[type='radio']:nth-child(1n+19) + span,.charsheet .hex-hider[value='9'] ~ input[type='radio']:nth-child(1n+21) + span,.charsheet .hex-hider[value='10'] ~ input[type='radio']:nth-child(1n+24) + span,.charsheet .hex-hider[value='11'] ~ input[type='radio']:nth-child(1n+26) + span,.charsheet .hex-hider[value='12'] ~ input[type='radio']:nth-child(1n+28) + span,.charsheet .hex-hider[value='13'] ~ input[type='radio']:nth-child(1n+32) + span,.charsheet .hex-hider[value='14'] ~ input[type='radio']:nth-child(1n+34) + span,.charsheet .hex-hider[value='15'] ~ input[type='radio']:nth-child(1n+36) + span,.charsheet .hex-hider[value='16'] ~ input[type='radio']:nth-child(1n+38) + span,.charsheet .hex-hider[value='17'] ~ input[type='radio']:nth-child(1n+40) + span,.charsheet .hex-hider[value='18'] ~ input[type='radio']:nth-child(1n+42) + span {
   opacity: 0; }
@@ -1682,10 +1719,10 @@
 
 .charsheet .pc-col {
   vertical-align: top;
-  width: calc(50% - 5px); }
+  /*width: calc(50% - 10px);*/ }
   .charsheet .pc-col:first-child {
     margin-right: 1.5%;
-    width: calc(50% - 10px); }
+    /*width: 100%;*/ }
 
 .charsheet .row-long {
   border-bottom: 1px solid #000; }
@@ -2104,15 +2141,15 @@
 .charsheet input.settings-flag:checked ~ div.settings {
   display: inherit; }
 
-.charsheet input.settings-flag[value='false'] ~ div.settings {
-  display: none; }
+/*.charsheet input.settings-flag[value='false'] ~ div.settings {
+  display: none; }*/
 
 
 
 
 
-.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body div.grunt.pain-tolerance {
-  display: none; }
+/*.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body div.grunt.pain-tolerance {
+  display: none; }*/
 
 .charsheet .pc .tabs input[value*='arms'] ~ button[name*='arms'],.charsheet .pc .tabs input[value*='augs'] ~ button[name*='augs'],.charsheet .pc .tabs input[value*='core'] ~ button[name*='core'],.charsheet .pc .tabs input[value*='gear'] ~ button[name*='gear'],.charsheet .pc .tabs input[value*='options'] ~ button[name*='options'],.charsheet .pc .tabs input[value*='social'] ~ button[name*='social'],.charsheet .pc .tabs input[value*='magic'] ~ button[name*='magic'],.charsheet .pc .tabs input[value*='matrix'] ~ button[name*='matrix'],.charsheet .pc .tabs input[value*='vehicle'] ~ button[name*='vehicle'] {
   background-color: #610b0d;
