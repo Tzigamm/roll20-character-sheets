@@ -95,23 +95,6 @@
   vertical-align: top;
   white-space: pre-line; }
 
-.pc .tabs .tab-button {
-    display: inline-block;
-    width: 20%;
-    padding: .5em .5em .25em .85em;
-    background-color: gray;
-    border-radius: 1em 1em 0 0;
-    font-size: 1.5em;
-    border: 1px solid black;
-    margin-right: -4px;
-}
-
-.pc .tabs .tab-button.active {
-    background-color: white;
-    font-weight: bold;
-    border-bottom: none;
-}
-
 .pc .tab-pane {
     display: none;
     box-sizing: border-box;
@@ -751,7 +734,7 @@
 
 .charsheet .tabs {
   color: #fff; }
-  .charsheet .tabs button[type='action'] {
+  .charsheet .tab-button {
     background-color: #333;
     border-radius: 2px;
     border: 1px solid #7c7c7c;
@@ -760,20 +743,20 @@
     text-transform: capitalize;
     padding: 5px;
     transition: transform .2s; }
-    .charsheet .tabs button[type='action'].pictos,.charsheet .tabs .repcontrol button.repcontrol_edit[type='action']:after,.charsheet .repcontrol .tabs button.repcontrol_edit[type='action']:after,.charsheet .tabs .repcontrol button.repcontrol_add[type='action']:after,.charsheet .repcontrol .tabs button.repcontrol_add[type='action']:after,.charsheet .tabs .itemcontrol button.repcontrol_del[type='action'],.charsheet .itemcontrol .tabs button.repcontrol_del[type='action'] {
+    .charsheet .tab-button.pictos,.charsheet .tabs .repcontrol button.repcontrol_edit[type='action']:after,.charsheet .repcontrol .tabs button.repcontrol_edit[type='action']:after,.charsheet .tabs .repcontrol button.repcontrol_add[type='action']:after,.charsheet .repcontrol .tabs button.repcontrol_add[type='action']:after,.charsheet .tabs .itemcontrol button.repcontrol_del[type='action'],.charsheet .itemcontrol .tabs button.repcontrol_del[type='action'] {
       text-transform: lowercase; }
-    .charsheet .tabs button[type='action']:hover,.charsheet .tabs button[type='action']:focus,.charsheet .tabs button[type='action']:active {
+    .charsheet .tab-button:hover,.charsheet .tab-button:focus,.charsheet .tab-button.active {
       text-shadow: inset 0px 0px 3px 1px #e31715;
       background-color: #610b0d;
       transform: scale(1.1); }
-  .charsheet .tabs button[type='roll'] {
+    #d6-roller {
     background: none;
     border: none;
     color: #fff;
     font-family: 'dicefontd6';
     font-size: 2.5em;
     vertical-align: top; }
-    .charsheet .tabs button[type='roll']:hover {
+    #d6-roller:hover {
       text-shadow: 1px 1px 2px #040404, 0 0 25px #610b0d, 0 0 5px #e31715; }
   .charsheet .tabs h2 {
     color: #fff;
@@ -852,16 +835,6 @@
   box-shadow: inset 0px 0px 3px 1px #7c7c7c;
   margin-left: -1%;
   padding-left: 0.5%;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
    }
   .charsheet .pc button[name*='shots']:hover,.charsheet .pc button > h2:hover,.charsheet .pc button > span:hover,.charsheet .pc label > button[type='roll']:hover,.charsheet .pc .repeat-box button[type='roll']:hover,.charsheet .pc .con-track button[type='action']:hover,.charsheet .pc button[data-i18n='default']:hover {
     color: #fff;
@@ -2151,7 +2124,7 @@
 /*.charsheet input[name='attr_stats_toggle']:not([value='settings']) ~ div.body div.grunt.pain-tolerance {
   display: none; }*/
 
-.charsheet .pc .tabs input[value*='arms'] ~ button[name*='arms'],.charsheet .pc .tabs input[value*='augs'] ~ button[name*='augs'],.charsheet .pc .tabs input[value*='core'] ~ button[name*='core'],.charsheet .pc .tabs input[value*='gear'] ~ button[name*='gear'],.charsheet .pc .tabs input[value*='options'] ~ button[name*='options'],.charsheet .pc .tabs input[value*='social'] ~ button[name*='social'],.charsheet .pc .tabs input[value*='magic'] ~ button[name*='magic'],.charsheet .pc .tabs input[value*='matrix'] ~ button[name*='matrix'],.charsheet .pc .tabs input[value*='vehicle'] ~ button[name*='vehicle'] {
+.charsheet .pc .tab-button.selected {
   background-color: #610b0d;
   box-shadow: inset 0px 0px 3px 1px #e31715; }
 

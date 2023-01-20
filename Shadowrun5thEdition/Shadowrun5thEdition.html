@@ -32,7 +32,7 @@
 			<input class="whisper-toggle" name="attr_edge_toggle" type="checkbox" value="@{edge}"/>
 			<span class="slider"></span>
 		</label>
-		<button name="d6" title="Roll D6s" type="roll" value="@{gm_toggle} &{template:rolls}{{header=^{d6}}}{{base=^{d6}}}{{dice=[[(?{d6s|0}d6>5@{explode_toggle})]]}}">L</button>
+		<button id="d6-roller" name="d6" title="Roll D6s" type="roll" value="@{gm_toggle} &{template:rolls}{{header=^{d6}}}{{base=^{d6}}}{{dice=[[(?{d6s|0}d6>5@{explode_toggle})]]}}">L</button>
 		<input name="attr_tab" type="hidden" value="options"/>
 		<button class="pictos tab-button" name="act_tab_options" data-tab="pc-settings">y</button>
 		<button data-i18n="core" class="tab-button" name="act_tab_core" data-tab="pc-core">core</button>
@@ -926,7 +926,8 @@
 <script type="text/worker">
 	$20('.tabs .tab-button').on('click', (e) => {
 		    const tab = e.htmlAttributes['data-tab'];
-		    console.log(tab);
+		    $20('.tabs .tab-button').removeClass('selected');
+			$20(`.tab-button[data-tab=${tab}]`).addClass('selected');
 		    $20('div[data-tab]').removeClass('active');
 		    $20(`div[data-tab=${tab}]`).addClass('active');
 		});
