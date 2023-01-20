@@ -548,24 +548,21 @@
 				</div>
 			</div>
 			<!-- Skills -->
-			<div class="pc-row">
+			<div class="pc-row skills">
 				<div class="header">
 					<div class="header htab">
 						<div class="triangle"></div>
-						<input class="tab-switch" name="attr_skill_toggle" title="Active skills" type="radio" value="active"/>
-						<h1 data-i18n="active">active..</h1>
+						<h1 id="pc-skills-active-button" class="tab-switch" data-tab="active" data-i18n="active">active..</h1>
 						<div class="right-tri"></div>
 					</div>
 					<div class="header htab">
 						<div class="triangle"></div>
-						<input class="tab-switch" name="attr_skill_toggle" title="Knowledge skills" type="radio" value="knowledge"/>
-						<h1 data-i18n="know">know..</h1>
+						<h1 class="tab-switch" data-tab="knowledge" data-i18n="know">know..</h1>
 						<div class="right-tri"></div>
 					</div>
 					<div class="header htab">
 						<div class="triangle"></div>
-						<input class="tab-switch" name="attr_skill_toggle" title="Language skills" type="radio" value="language"/>
-						<h1 data-i18n="lang">lang..</h1>
+						<h1 class="tab-switch" data-tab="language" data-i18n="lang">lang..</h1>
 						<div class="right-tri"></div>
 					</div>
 					<div class="triangle"></div>
@@ -582,7 +579,7 @@
 							</div>
 						</div>
 						<input class="tab-switch" name="attr_skill_toggle" type="hidden" value="active"/>
-						<div class="skills-active">
+						<div id="pc-skills-active-tab" class="skills-active tab-pane" data-tab="active">
 							<div class="rows repeating-container">
 								<div class="row-long">
 									<input name="attr_default_display" type="hidden" value="Agility"/><button data-i18n="default" name="roll_default" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=^{default}}}{{base=@{default_display}}}{{dice=[[((@{default_attribute}+-1) +@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}">default</button><span class="text-center">-</span>
@@ -770,7 +767,7 @@
 								</fieldset>
 							</div>
 						</div>
-						<div class="skills-know">
+						<div class="skills-know tab-pane" data-tab="knowledge">
 							<div class="rows repeating-container">
 								<fieldset class="repeating_knowledge">
 									<input name="attr_display_rating" type="hidden"/><input name="attr_specialization" type="hidden" value=""/><input name="attr_display_limit" type="hidden" value="Mental"/><input name="attr_display_attribute" type="hidden" value="Logic"/><input name="attr_dicepool" type="hidden" value="0"/><input class="settings-flag" name="attr_flag" type="hidden" value="settings" title="@{repeating_knowledge_${x}_flag}"/>
@@ -826,7 +823,7 @@
 								</fieldset>
 							</div>
 						</div>
-						<div class="skills-lang">
+						<div class="skills-lang tab-pane" data-tab="language">
 							<div class="rows repeating-container">
 								<fieldset class="repeating_language">
 									<input name="attr_display_rating" type="hidden"/><input name="attr_specialization" type="hidden" value=""/>
@@ -2520,11 +2517,18 @@
 </div>
 
 <script type="text/worker">
-	on('sheet:opened',function(){
+	on('sheet:opened',function (){
+		//Init PC tab
 		$20('.pc .tabs .tab-button').removeClass('selected');
 		$20('#pc-core-tab-button').addClass('selected');
 		$20('.pc div[data-tab]').removeClass('active');
 		$20('#pc-core-tab').addClass('active');
+
+		//Init Skills tab
+		$20('.pc .skills .tab-switch').removeClass('selected');
+		$20('#pc-skills-active-button').addClass('selected');
+		$20('.pc .skills div[skills-tab]').removeClass('active');
+		$20('#pc-skills-active-tab').addClass('active');
 	});
 
 	$20('.pc .tabs .tab-button').on('click', (e) => {
@@ -2538,4 +2542,12 @@
 	$20('#pc-attributes-settings-toggle').on('click', (e) => {
 		$20('.pc .attribute-row .settings').toggleClass('active');
 	});
+
+	$20('.skills .tab-switch').on('click', (e) => {
+		const tab = e.htmlAttributes['data-tab'];
+		$20('.pc .skills .tab-switch').removeClass('selected');
+		$20(`.pc .skills .tab-switch[data-tab=${tab}]`).addClass('selected');
+		$20('.pc .skills div[data-tab]').removeClass('active');
+		$20(`.pc .skills div[data-tab=${tab}]`).addClass('active');
+	})
 </script>

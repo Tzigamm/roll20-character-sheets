@@ -160,8 +160,8 @@
 .charsheet .d-block {
   display: block; }
 
-.charsheet .tab-switch[value='active'] ~ .skills-active,.charsheet .tab-switch[value='knowledge'] ~ .skills-know,.charsheet .tab-switch[value='language'] ~ .skills-lang,.charsheet .magic-toggle[value='spells'] ~ .magic-spells,.charsheet .magic-toggle[value='preps'] ~ .magic-preps,.charsheet .magic-toggle[value='rituals'] ~ .magic-rituals,.charsheet .tab-switch[value='quality'] ~ .quality,.charsheet .tab-switch[value='martial'] ~ .martial,.charsheet .matrix-toggle[value='cyberdeck'] ~ .cyberdeck,.charsheet .matrix-toggle[value='persona'] ~ .persona {
-  display: inline; }
+/*.charsheet .tab-switch[value='active'] ~ .skills-active,.charsheet .tab-switch[value='knowledge'] ~ .skills-know,.charsheet .tab-switch[value='language'] ~ .skills-lang,.charsheet .magic-toggle[value='spells'] ~ .magic-spells,.charsheet .magic-toggle[value='preps'] ~ .magic-preps,.charsheet .magic-toggle[value='rituals'] ~ .magic-rituals,.charsheet .tab-switch[value='quality'] ~ .quality,.charsheet .tab-switch[value='martial'] ~ .martial,.charsheet .matrix-toggle[value='cyberdeck'] ~ .cyberdeck,.charsheet .matrix-toggle[value='persona'] ~ .persona {
+  display: inline; }*/
 
 .charsheet .pc h2,.charsheet .pc h3,.charsheet .pc .tabs,.charsheet .pc div.skill-box div.row-long,.charsheet .npc div.tabs,.charsheet .npc div.mid,.charsheet input[name='attr_sheet_type'][value='grunt'] ~ .npc .attribute.grunt,.charsheet input[name='attr_sheet_type'][value='host'] ~ .npc .attribute.host,.charsheet input[name='attr_sheet_type'][value='sprite'] ~ .npc .attribute.sprite,.charsheet input[name='attr_sheet_type'][value='vehicle'] ~ .npc .attribute.vehicle {
   display: inline-grid; }
@@ -1739,9 +1739,9 @@
     opacity: 0;
     width: 80px;
     z-index: 2; }
-    .charsheet div.htab input[type='radio'] + h1 {
+    .charsheet div.htab .tab-switch{
       color: #9a9a9a; }
-    .charsheet div.htab input[type='radio']:hover ~ h1,.charsheet div.htab input[type='radio']:checked ~ h1 {
+    .charsheet div.htab .tab-switch:hover,.charsheet div.htab .tab-switch.selected{
       color: #fff; }
 
 
