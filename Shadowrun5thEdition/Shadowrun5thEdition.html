@@ -2518,6 +2518,11 @@
 </div>
 
 <script type="text/worker">
+	on('sheet:opened',function(){
+			$20('div[data-tab]').removeClass('active');
+			$20('#pc-core-tab').addClass('active');
+		});
+
 	$20('.tabs .tab-button').on('click', (e) => {
 		    const tab = e.htmlAttributes['data-tab'];
 		    $20('.tabs .tab-button').removeClass('selected');
