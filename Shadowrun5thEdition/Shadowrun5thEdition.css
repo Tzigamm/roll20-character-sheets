@@ -108,6 +108,14 @@
     width: 100%;
 }
 
+.pc .settings {
+  display: none;
+}
+
+.pc .settings.active {
+  display: block;
+}
+
 .pc-col-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

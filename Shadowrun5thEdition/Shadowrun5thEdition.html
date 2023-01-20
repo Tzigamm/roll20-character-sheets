@@ -47,6 +47,7 @@
 
 	<div class="pc-col-container">
 		<div class="static pc-col pc-general-data">
+			<!-- General infos -->
 			<div class="pc-row info">
 				<div class="header">
 					<div class="triangle"></div>
@@ -93,6 +94,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- Attributes -->
 			<div class="pc-row">
 				<div class="header">
 					<div class="triangle"></div>
@@ -100,8 +102,8 @@
 				</div>
 				<div class="border-box">
 					<div class="pc-box medium-box attributes">
-						<input class="settings-toggle" type="checkbox" name="attr_flag_attribute" checked="checked"/>
-						<span class="pictos text-lowercase">x</span>
+						<input id="pc-attributes-settings-toggle" class="settings-toggle" type="checkbox" name="attr_flag_attribute" checked="checked"/>
+						<span  lass="pictos text-lowercase">x</span>
 						<div class="grid attribute">
 							<div class="col">
 								<div class="grid attribute-row">
@@ -545,6 +547,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- Skills -->
 			<div class="pc-row">
 				<div class="header">
 					<div class="header htab">
@@ -2518,17 +2521,21 @@
 
 <script type="text/worker">
 	on('sheet:opened',function(){
-			$20('.pc .tabs .tab-button').removeClass('selected');
-			$20('#pc-core-tab-button').addClass('selected');
-			$20('.pc div[data-tab]').removeClass('active');
-			$20('#pc-core-tab').addClass('active');
-		});
+		$20('.pc .tabs .tab-button').removeClass('selected');
+		$20('#pc-core-tab-button').addClass('selected');
+		$20('.pc div[data-tab]').removeClass('active');
+		$20('#pc-core-tab').addClass('active');
+	});
 
 	$20('.pc .tabs .tab-button').on('click', (e) => {
-		    const tab = e.htmlAttributes['data-tab'];
-		    $20('.pc .tabs .tab-button').removeClass('selected');
-			$20(`.pc .tabs .tab-button[data-tab=${tab}]`).addClass('selected');
-		    $20('.pc div[data-tab]').removeClass('active');
-		    $20(`.pc div[data-tab=${tab}]`).addClass('active');
-		});
+		const tab = e.htmlAttributes['data-tab'];
+		$20('.pc .tabs .tab-button').removeClass('selected');
+		$20(`.pc .tabs .tab-button[data-tab=${tab}]`).addClass('selected');
+		$20('.pc div[data-tab]').removeClass('active');
+		$20(`.pc div[data-tab=${tab}]`).addClass('active');
+	});
+
+	$20('#pc-attributes-settings-toggle').on('click', (e) => {
+		$20('.pc .attribute-row .settings').toggleClass('active');
+	});
 </script>
