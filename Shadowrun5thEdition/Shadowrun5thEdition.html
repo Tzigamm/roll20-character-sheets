@@ -1139,7 +1139,7 @@
 					<div class="header right-header"><h1 data-i18n="conditionmonitor">Condition Monitor</h1><div class="right-tri"></div></div>
 					<div class="border-box">
 						<div class="pc-box medium-box condition-box">
-							<input type="checkbox" class="settings-toggle" name="attr_flag_condition" checked="checked" title="Settings toggle" /><span>x</span>
+							<input id="pc-core-condition-monitor-settings-toggle" type="checkbox" class="settings-toggle" name="attr_flag_condition" checked="checked" title="Settings toggle" /><span>x</span>
 							<div class="settings">
 								<label data-i18n="conditionmonitormodifiers">Condition Monitor Modifiers (P/S): </label>
 								<input type="hidden" name="attr_physical" value="10" />
@@ -1220,21 +1220,19 @@
 				<div class="quality-box">
 					<div class="header right-header">
 						<div class="header htab">
-							<input class="tab-switch" input="input" name="attr_quality_toggle" type="radio" value="quality" checked="checked"/>
-							<h1 data-i18n="qualities">Qualities</h1>
+							<h1 id="pc-core-quality-button" class="tab-switch" data-tab="qualities" data-i18n="qualities">Qualities</h1>
 							<div class="right-tri"></div>
 						</div>
 						<div class="header htab">
 							<div class="triangle"></div>
-							<input class="tab-switch" input="input" name="attr_quality_toggle" type="radio" value="martial"/>
-							<h1 data-i18n="martialarts">Martial Arts</h1>
+							<h1 class="tab-switch" data-tab="martial" data-i18n="martialarts">Martial Arts</h1>
 							<div class="right-tri"></div>
 						</div>
 					</div>
 					<div class="border-box">
 						<div class="pc-box medium-box">
 							<input class="tab-switch" input="input" name="attr_quality_toggle" type="hidden" value="quality"/>
-							<div class="quality">
+							<div id="pc-core-quality-tab" data-tab="qualities" class="tab-pane quality">
 								<div class="row-long headers">
 									<h2 data-i18n="quality">Quality</h2>
 									<h2 data-i18n="type">Type</h2>
@@ -1260,7 +1258,7 @@
 									</fieldset>
 								</div>
 							</div>
-							<div class="martial">
+							<div data-tab="martial" class="tab-pane martial">
 								<div class="row-long headers">
 									<h2 data-i18n="technique">Technique</h2>
 									<h2 data-i18n="style">Style</h2>
@@ -2548,8 +2546,19 @@
 		$20('#pc-skills-active-button').addClass('selected');
 		$20('.pc .skills div[skills-tab]').removeClass('active');
 		$20('#pc-skills-active-tab').addClass('active');
+
+		//Init CM
+		$20('.pc .core .condition-box .settings').removeClass('active');
+		$20('.pc .core .condition-box .display').addClass('active');
+
+		//Init qualities/martial
+		$20('.pc .core .quality-box .tab-switch').removeClass('selected');
+		$20('#pc-core-quality-button').addClass('selected');
+		$20('.pc .core .quality-box div[data-tab]').removeClass('active');
+		$20('#pc-core-quality-tab').addClass('active');
 	});
 
+	//PC sheet top tabs
 	$20('.pc .tabs .tab-button').on('click', (e) => {
 		const tab = e.htmlAttributes['data-tab'];
 		$20('.pc .tabs .tab-button').removeClass('selected');
@@ -2558,15 +2567,32 @@
 		$20(`.pc div[data-tab=${tab}]`).addClass('active');
 	});
 
+	//PC sheet attributes
 	$20('#pc-attributes-settings-toggle').on('click', (e) => {
 		$20('.pc .attribute-row .settings').toggleClass('active');
 	});
 
+	//PC sheet skills tabs
 	$20('.skills .tab-switch').on('click', (e) => {
 		const tab = e.htmlAttributes['data-tab'];
 		$20('.pc .skills .tab-switch').removeClass('selected');
 		$20(`.pc .skills .tab-switch[data-tab=${tab}]`).addClass('selected');
 		$20('.pc .skills div[data-tab]').removeClass('active');
 		$20(`.pc .skills div[data-tab=${tab}]`).addClass('active');
-	})
+	});
+
+	//PC sheet condition monitor
+	$20('#pc-core-condition-monitor-settings-toggle').on('click', (e) => {
+		$20('.pc .core .condition-box .settings').toggleClass('active');
+		$20('.pc .core .condition-box .display').toggleClass('active');
+	});
+
+	//PC sheet qualities/martial tabs
+	$20('.pc .core .quality-box .tab-switch').on('click', (e) => {
+		const tab = e.htmlAttributes['data-tab'];
+		$20('.pc .core .quality-box .tab-switch').removeClass('selected');
+		$20(`.pc .core .quality-box .tab-switch[data-tab=${tab}]`).addClass('selected');
+		$20('.pc .core .quality-box div[data-tab]').removeClass('active');
+		$20(`.pc .core .quality-box div[data-tab=${tab}]`).addClass('active');
+	});
 </script>

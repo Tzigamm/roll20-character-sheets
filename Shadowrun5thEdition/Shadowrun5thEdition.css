@@ -116,6 +116,14 @@
   display: block;
 }
 
+.pc .display {
+  display: none;
+}
+
+.pc .display.active {
+  display: block;
+}
+
 .pc-col-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2112,7 +2120,7 @@
 
 .charsheet .display,.charsheet input.settings-toggle:checked ~ div.settings,.charsheet input.settings-toggle:checked ~ .attribute .col .attribute-row .col .row-long div.settings,.charsheet input.settings-toggle:checked ~ .attribute .limits-row .limit .col div.settings,.charsheet input.settings-toggle:checked ~ .attr-lim div.settings {
   background: none;
-  display: inherit;
+  /*display: inherit;*/
   font-size: 1em;
   text-align: left;
   width: 100%; }
